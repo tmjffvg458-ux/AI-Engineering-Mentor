@@ -245,6 +245,91 @@ else if(q.includes('طابوق')||q.includes('بلوك'))a='عدد الطابو�
 else if(q.includes('حديد'))a='تحديد حديد التسليح يتطلب مراجعة المخططات الإنشائية وأقطار القضبان والمسافات والمواصفات.';
 document.getElementById('answerResult').textContent=a;
 }
+
+// محرر المخططات الهندسية التفاعلي
+let engineeringRooms = [];
+
+function addEngineeringRoom() {
+  const name = prompt("اكتب اسم الغرفة:");
+  if (!name) return;
+
+  const width = Number(prompt("عرض الغرفة بالمتر:"));
+  const length = Number(prompt("طول الغرفة بالمتر:"));
+
+  if (!Number.isFinite(width) || !Number.isFinite(length) ||
+      width <= 0 || length <= 0) {
+    alert("يرجى إدخال أبعاد صحيحة");
+    return;
+  }
+
+  engineeringRooms.push({
+    name: name,
+    width: width,
+    length: length
+  });
+
+  renderEngineeringRooms();
+}
+
+function renderEngineeringRooms() {
+  const container = document.getElementById("engineeringRooms");
+  if (!container) return;
+
+  container.innerHTML = "";
+  let total = 0;
+
+  engineeringRooms.forEach((room, index) => {
+    const area = room.width * room.length;
+    total += area;
+
+    const card = document.createElement("div");
+    card.className = "result";
+    card.innerHTML = `
+      <b>${safe(room.name)}</b><br>
+      الأبعاد: ${room.width} × ${room.length} متر<br>
+      المساحة: ${area.toFixed(2)} م²
+    `;
+
+    const edit = document.createElement("button");
+    edit.className = "btn";
+    edit.textContent = "تعديل";
+    edit.onclick = () => editEngineeringRoom(index);
+
+    const remove = document.createElement("button");
+    remove.className = "btn";
+    remove.textContent = "حذف";
+    remove.style.marginRight = "8px";
+    remove.onclick = () => {
+      engineeringRooms.splice(index, 1);
+      renderEngineeringRooms();
+    };
+
+    card.append(edit, remove);
+    container.appendChild(card);
+  });
+
+  const totalBox = document.createElement("div");
+  totalBox.className = "result";
+  totalBox.textContent = "مجموع مساحات الغرف: " +
+    total.toFixed(2) + " م²";
+
+  container.appendChild(totalBox);
+}
+
+function editEngineeringRoom(index) {
+  const room = engineeringRooms[index];
+
+  const width = Number(prompt("العرض الجديد:", room.width));
+  if (!Number.isFinite(width) || width <= 0) return;
+
+  const length = Number(prompt("الطول الجديد:", room.length));
+  if (!Number.isFinite(length) || length <= 0) return;
+
+  room.width = width;
+  room.length = length;
+
+  renderEngineeringRooms();
+}
 </script>
 </body>
 </html>
