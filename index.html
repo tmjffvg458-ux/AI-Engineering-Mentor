@@ -1,64 +1,250 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#081426">
-<title>AI Engineering Mentor | المهندس علي رعد</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101b30">
+<title>AI Engineering Mentor - المرشد الهندسي الذكي</title>
 <style>
-:root{--bg:#071321;--panel:#102238;--panel2:#142b43;--line:#24425e;--blue:#35b6ef;--cyan:#70d8ff;--text:#edf7ff;--muted:#a8bfd2;--gold:#f4c66b}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 85% 0,#123454 0,transparent 34%),var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Tahoma,Arial,sans-serif;line-height:1.7}
-header{padding:26px 18px 22px;border-bottom:1px solid var(--line);background:#081626dd;position:sticky;top:0;z-index:5;backdrop-filter:blur(12px)}
-.wrap{max-width:1120px;margin:auto;padding:0 16px}.brand{display:flex;align-items:center;gap:13px}.logo{width:48px;height:48px;border-radius:15px;background:linear-gradient(135deg,#35b6ef,#1766a6);display:grid;place-items:center;font-size:25px;font-weight:900;color:#061525}.brand h1{font-size:19px;margin:0}.brand p{margin:0;color:var(--muted);font-size:12px}.hero{padding:35px 0 24px}.eyebrow{color:var(--cyan);font-size:13px;font-weight:700}.hero h2{font-size:clamp(27px,5vw,43px);line-height:1.25;margin:9px 0}.hero p{color:var(--muted);max-width:720px;margin:0}.hero strong{color:white}
-nav{display:flex;gap:8px;overflow:auto;padding:12px 0 18px}button,.navbtn{border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:12px;padding:10px 14px;font:inherit;cursor:pointer;white-space:nowrap}.navbtn.active,button.primary{background:linear-gradient(135deg,#168ac5,#1765a5);border-color:#299ed8}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:14px;margin:16px 0 30px}.card{background:linear-gradient(145deg,var(--panel),#0c1d30);border:1px solid var(--line);border-radius:18px;padding:19px;box-shadow:0 12px 35px #0002}.card h3{margin:0 0 7px;font-size:18px}.card p{color:var(--muted);margin:0 0 12px;font-size:14px}.ico{font-size:25px;margin-bottom:6px}.section{display:none;padding-bottom:35px}.section.active{display:block}.section-title{margin:22px 0 5px;font-size:24px}.sub{color:var(--muted);margin-top:0}.field{display:grid;gap:5px;margin:11px 0}.field label{font-size:13px;color:var(--muted)}input,select,textarea{width:100%;background:#071727;border:1px solid var(--line);color:var(--text);padding:12px;border-radius:10px;font:inherit}input:focus,textarea:focus,select:focus{outline:2px solid #279dd7}.result{margin-top:12px;padding:13px;border-radius:12px;background:#082b3c;border:1px solid #17658a;color:#dff7ff;white-space:pre-line}.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}.tablewrap{overflow:auto}table{width:100%;border-collapse:collapse;min-width:520px}th,td{padding:9px;border-bottom:1px solid var(--line);text-align:right}th{color:var(--cyan)}.small{font-size:12px;color:var(--muted)}.tag{display:inline-block;padding:4px 9px;border:1px solid var(--line);border-radius:20px;color:var(--cyan);font-size:12px}footer{border-top:1px solid var(--line);padding:20px 0 35px;color:var(--muted);font-size:12px}.notice{border-right:3px solid var(--gold);padding:10px 13px;background:#30271355;color:#f5dfae;border-radius:8px;font-size:13px}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Tahoma,sans-serif;background:#0b1220;color:#edf3ff}
+header{padding:30px 15px;text-align:center;background:linear-gradient(135deg,#102b4c,#087e9b)}
+header h1{font-size:27px}
+nav{display:flex;gap:8px;overflow:auto;padding:12px;background:#142239;position:sticky;top:0}
+button{cursor:pointer}
+nav button,.btn{border:0;background:#087e9b;color:white;padding:12px 17px;border-radius:9px;white-space:nowrap}
+main{max-width:1050px;margin:auto;padding:15px}
+section{display:none}
+section.active{display:block}
+.card{background:#142239;border:1px solid #2a405d;border-radius:15px;padding:18px;margin:14px 0}
+h2{color:#59d5e8}
+h3{color:#a8d8ff}
+input,textarea{width:100%;padding:12px;margin:8px 0 15px;border-radius:8px;border:1px solid #50647d;background:#0c1728;color:white}
+label{display:block}
+.result{background:#092d37;padding:15px;border-radius:9px;margin-top:12px;color:#8ff2df;line-height:2}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+.hero{text-align:center;padding:25px;background:linear-gradient(120deg,#173c60,#13566a);border-radius:15px}
+footer{text-align:center;padding:25px;color:#a9bcd4}
 </style>
 </head>
 <body>
-<header><div class="wrap brand"><div class="logo">AI</div><div><h1>AI Engineering Mentor</h1><p>منصّة هندسية تعليمية وتطبيقية</p></div><span style="margin-right:auto" class="tag">الإصدار الأول</span></div></header>
-<main class="wrap">
-<section class="hero"><div class="eyebrow">BUILD • ESTIMATE • LEARN</div><h2>مرشدك الهندسي إلى<br><strong>مستقبل البناء والإنشاءات</strong></h2><p>أدوات أولية للتخمين وحصر الكميات والحسابات الهندسية، مع محتوى تعليمي منظم لطلبة هندسة تقنيات البناء والإنشاءات.</p></section>
-<nav id="nav">
-<button class="navbtn active" data-target="home">الرئيسية</button><button class="navbtn" data-target="estimate">التخمين والكلف</button><button class="navbtn" data-target="boq">حصر الكميات BOQ</button><button class="navbtn" data-target="concrete">حاسبة الخرسانة</button><button class="navbtn" data-target="survey">المساحة</button><button class="navbtn" data-target="library">المكتبة</button><button class="navbtn" data-target="academy">الأكاديمية</button><button class="navbtn" data-target="assistant">المساعد التجريبي</button>
+
+<header>
+<div style="font-size:45px">🏗️</div>
+<h1>AI Engineering Mentor</h1>
+<h2 style="color:white">المرشد الهندسي الذكي</h2>
+<p>منصة هندسية متخصصة في البناء والإنشاءات</p>
+<p><b>إعداد وتطوير: علي رعد</b></p>
+</header>
+
+<nav>
+<button onclick="show('home')">الرئيسية</button>
+<button onclick="show('calc')">الحاسبات</button>
+<button onclick="show('boq')">حصر الكميات</button>
+<button onclick="show('plan')">المخططات</button>
+<button onclick="show('library')">المكتبة</button>
+<button onclick="show('assistant')">المساعد</button>
 </nav>
-<section id="home" class="section active">
-<div class="grid">
-<article class="card"><div class="ico">📐</div><h3>التخمين الهندسي</h3><p>تقدير أولي للكميات والكلف وفق بيانات تدخلها بنفسك.</p><button class="primary" data-go="estimate">فتح الأداة</button></article>
-<article class="card"><div class="ico">📋</div><h3>حصر الكميات BOQ</h3><p>أنشئ جدول بنود وكميات وأسعار واحسب الإجمالي.</p><button class="primary" data-go="boq">فتح الأداة</button></article>
-<article class="card"><div class="ico">🧱</div><h3>حاسبات الخرسانة</h3><p>حساب حجم العناصر الخرسانية المستطيلة.</p><button class="primary" data-go="concrete">فتح الحاسبة</button></article>
-<article class="card"><div class="ico">🛰️</div><h3>المساحة</h3><p>حساب المساحة والمحيط للمستطيل والمربع.</p><button class="primary" data-go="survey">فتح الأدوات</button></article>
-<article class="card"><div class="ico">📚</div><h3>المكتبة الهندسية</h3><p>فهرس موضوعات ومراجع مقترحة للبدء بالتعلم.</p><button class="primary" data-go="library">استعراض المكتبة</button></article>
-<article class="card"><div class="ico">🎓</div><h3>الأكاديمية</h3><p>مسارات تعلم عملية في مواد البناء والإنشاءات.</p><button class="primary" data-go="academy">دخول الأكاديمية</button></article>
+
+<main>
+<section id="home" class="active">
+<div class="hero">
+<h2 style="color:white">مرحباً بك في عالم الهندسة الذكية</h2>
+<p>تعلم، احسب، خطط، وطور مهاراتك الهندسية.</p>
 </div>
-<div class="notice">تنبيه: هذه النسخة تعليمية أولية. النتائج تقديرية ولا تُعتمد للتنفيذ أو التصميم الإنشائي قبل تدقيق مهندس مختص ومراجعة المخططات والمواصفات.</div>
+<div class="grid">
+<div class="card"><h3>📐 الحاسبات الهندسية</h3><p>حساب الخرسانة والحفر والمساحات.</p></div>
+<div class="card"><h3>🏢 حصر الكميات</h3><p>تقدير كميات المواد وتكاليفها.</p></div>
+<div class="card"><h3>📏 المخططات</h3><p>إنشاء مخططات أولية للمساحات.</p></div>
+<div class="card"><h3>📚 المكتبة</h3><p>مصادر ومعلومات هندسية.</p></div>
+</div>
+<div class="card">
+<h2>هدف المشروع</h2>
+<p>توظيف التقنيات الرقمية والذكاء الاصطناعي في تطوير التعليم الهندسي وتسهيل العمليات الحسابية والتخطيطية في مشاريع البناء والإنشاءات.</p>
+</div>
 </section>
-<section id="estimate" class="section"><h2 class="section-title">التخمين الهندسي والكلف</h2><p class="sub">تقدير كلفة بند واحد بناءً على الكمية وسعر الوحدة.</p><div class="card"><div class="row"><div class="field"><label>اسم البند</label><input id="eName" value="خرسانة"></div><div class="field"><label>الكمية</label><input id="eQty" type="number" min="0" step="any" placeholder="مثلاً 25"></div><div class="field"><label>سعر الوحدة (دينار)</label><input id="ePrice" type="number" min="0" step="any" placeholder="مثلاً 120000"></div></div><button class="primary" id="calcEstimate">احسب التخمين</button><div class="result" id="eResult" aria-live="polite">أدخل البيانات ثم اضغط احسب التخمين.</div></div></section>
-<section id="boq" class="section"><h2 class="section-title">حصر الكميات BOQ</h2><p class="sub">أضف البنود واحسب مجموع الكلف. البيانات تبقى داخل جلسة المتصفح الحالية.</p><div class="card"><div class="row"><div class="field"><label>اسم البند</label><input id="bName" placeholder="مثلاً: أعمال الحفر"></div><div class="field"><label>الوحدة</label><select id="bUnit"><option>م³</option><option>م²</option><option>م.ط</option><option>كغم</option><option>عدد</option><option>مقطوعية</option></select></div><div class="field"><label>الكمية</label><input id="bQty" type="number" min="0" step="any"></div><div class="field"><label>سعر الوحدة (دينار)</label><input id="bPrice" type="number" min="0" step="any"></div></div><button class="primary" id="addItem">إضافة بند</button><div class="tablewrap"><table><thead><tr><th>البند</th><th>الوحدة</th><th>الكمية</th><th>سعر الوحدة</th><th>الإجمالي</th><th>حذف</th></tr></thead><tbody id="boqBody"><tr><td colspan="6" class="small">لا توجد بنود بعد.</td></tr></tbody></table></div><div class="result" id="boqTotal">الإجمالي الكلي: 0 دينار</div><button id="printBoq">طباعة الجدول</button></div></section>
-<section id="concrete" class="section"><h2 class="section-title">حاسبة حجم الخرسانة</h2><p class="sub">للعناصر ذات الشكل المتوازي المستطيلات مثل القواعد والكمرات والبلاطات المستطيلة.</p><div class="card"><div class="row"><div class="field"><label>الطول (متر)</label><input id="cL" type="number" min="0" step="any"></div><div class="field"><label>العرض (متر)</label><input id="cW" type="number" min="0" step="any"></div><div class="field"><label>السماكة / الارتفاع (متر)</label><input id="cH" type="number" min="0" step="any"></div></div><button class="primary" id="calcConcrete">احسب الحجم</button><div class="result" id="cResult">الحجم يظهر هنا بالمتر المكعب.</div></div></section>
-<section id="survey" class="section"><h2 class="section-title">أدوات المساحة</h2><p class="sub">حساب هندسي بسيط للمستطيل أو المربع.</p><div class="card"><div class="row"><div class="field"><label>الطول (متر)</label><input id="sL" type="number" min="0" step="any"></div><div class="field"><label>العرض (متر)</label><input id="sW" type="number" min="0" step="any"></div></div><button class="primary" id="calcSurvey">احسب المساحة والمحيط</button><div class="result" id="sResult">أدخل الأبعاد.</div></div></section>
-<section id="library" class="section"><h2 class="section-title">المكتبة الهندسية</h2><p class="sub">فهرس تعليمي أولي للموضوعات التي يمكنك البحث عنها والتوسع فيها.</p><div class="grid">
-<div class="card"><h3>مواد البناء</h3><p>الإسمنت، الركام، الخرسانة، فحوصات الهطول ومقاومة الضغط.</p><span class="tag">مواد إنشائية</span></div>
-<div class="card"><h3>الرسم الهندسي وAutoCAD</h3><p>المقاييس، الطبقات، الأبعاد، المساقط والمقاطع.</p><span class="tag">رسم هندسي</span></div>
-<div class="card"><h3>المساحة</h3><p>الميزان، Total Station، الترافيرس، المناسيب والإحداثيات.</p><span class="tag">أعمال مساحية</span></div>
-<div class="card"><h3>إدارة المشاريع والكميات</h3><p>BOQ، التخمين، جداول الكميات، البرنامج الزمني وضبط الكلفة.</p><span class="tag">إدارة إنشاء</span></div>
-</div><div class="notice">هذا فهرس موضوعات وليس مستودع كتب؛ أضف لاحقاً روابط المراجع المرخّصة أو ملفات تملك حق استخدامها.</div></section>
-<section id="academy" class="section"><h2 class="section-title">الأكاديمية الهندسية</h2><p class="sub">مسار مقترح لتطوير المهارات بالتدرج.</p><div class="grid"><div class="card"><h3>المستوى 1 — الأساسيات</h3><p>الوحدات، قراءة المخططات، مبادئ الخرسانة ومواد البناء.</p></div><div class="card"><h3>المستوى 2 — التطبيقات</h3><p>حصر كميات أولي، AutoCAD، المساحة وقراءة التفاصيل.</p></div><div class="card"><h3>المستوى 3 — الموقع</h3><p>تسلسل التنفيذ، ضبط الجودة، السلامة وتوثيق الأعمال.</p></div></div></section>
-<section id="assistant" class="section"><h2 class="section-title">المساعد الهندسي — نسخة تجريبية</h2><p class="sub">يعرض إرشادات عامة حسب الموضوع المختار، ولا يتصل حالياً بنموذج ذكاء اصطناعي مباشر.</p><div class="card"><div class="field"><label>اختر الموضوع</label><select id="aTopic"><option value="concrete">الخرسانة</option><option value="boq">حصر الكميات</option><option value="survey">المساحة</option><option value="site">إدارة الموقع</option></select></div><button class="primary" id="askAssistant">اعرض إرشاداً</button><div class="result" id="aResult">اختر موضوعاً ثم اضغط اعرض إرشاداً.</div></div></section>
+
+<section id="calc">
+<h2>الحاسبات الهندسية</h2>
+<div class="card">
+<h3>حساب حجم الخرسانة</h3>
+<label>الطول (م)</label><input id="l" type="number">
+<label>العرض (م)</label><input id="w" type="number">
+<label>الارتفاع (م)</label><input id="h" type="number">
+<button class="btn" onclick="calcConcrete()">احسب</button>
+<div id="r1" class="result">النتيجة تظهر هنا</div>
+</div>
+<div class="card">
+<h3>حساب مساحة الجدار</h3>
+<label>الطول (م)</label><input id="wl" type="number">
+<label>الارتفاع (م)</label><input id="wh" type="number">
+<label>مساحة الفتحات (م²)</label><input id="wo" type="number" value="0">
+<button class="btn" onclick="calcWall()">احسب</button>
+<div id="r2" class="result">النتيجة تظهر هنا</div>
+</div>
+<div class="card">
+<h3>حساب حجم الحفر</h3>
+<label>الطول</label><input id="el" type="number">
+<label>العرض</label><input id="ew" type="number">
+<label>العمق</label><input id="eh" type="number">
+<button class="btn" onclick="calcExcavation()">احسب</button>
+<div id="r3" class="result">النتيجة تظهر هنا</div>
+</div>
+<div class="card">
+<h3>حساب عدد الطابوق</h3>
+<label>مساحة الجدار (م²)</label><input id="ba" type="number">
+<label>عدد الطابوق لكل متر مربع</label><input id="bd" type="number" value="50">
+<button class="btn" onclick="calcBricks()">احسب</button>
+<div id="r4" class="result">النتيجة تظهر هنا</div>
+</div>
+<p>ملاحظة: الحاسبات تعليمية وتقديرية ولا تغني عن التصميم والمخططات المعتمدة.</p>
+</section>
+
+<section id="boq">
+<h2>نظام حصر الكميات BOQ</h2>
+<div class="card">
+<label>اسم المادة أو العمل</label><input id="item" placeholder="خرسانة الأساس">
+<label>الكمية</label><input id="qty" type="number">
+<label>سعر الوحدة</label><input id="price" type="number">
+<button class="btn" onclick="addItem()">إضافة</button>
+<div id="boqresult" class="result">جدول الكميات فارغ.</div>
+</div>
+</section>
+
+<section id="plan">
+<h2>المخططات الهندسية</h2>
+<div class="card">
+<label>طول المساحة (م)</label><input id="pl" type="number" value="15">
+<label>عرض المساحة (م)</label><input id="pw" type="number" value="10">
+<button class="btn" onclick="drawPlan()">إنشاء المخطط</button>
+<div id="drawing" class="result">المخطط يظهر هنا.</div>
+<label>اسم الغرفة لإضافتها</label><input id="room" placeholder="غرفة نوم">
+<button class="btn" onclick="addRoom()">إضافة غرفة</button>
+<div id="rooms"></div>
+</div>
+</section>
+
+<section id="library">
+<h2>المكتبة الهندسية</h2>
+<div class="card">
+<details><summary>الخرسانة المسلحة</summary><p>مادة إنشائية تتكون من الخرسانة وحديد التسليح.</p></details>
+<details><summary>الأسس والقواعد</summary><p>تنقل أحمال المنشأ إلى التربة وفق التصميم الهندسي.</p></details>
+<details><summary>المساحة الهندسية</summary><p>قياس المسافات والزوايا والمناسيب وتحديد المواقع.</p></details>
+<details><summary>حصر الكميات</summary><p>تقدير كميات المواد والأعمال اللازمة للمشروع.</p></details>
+<details><summary>AutoCAD</summary><p>برنامج للرسم والتصميم الهندسي ثنائي وثلاثي الأبعاد.</p></details>
+<details><summary>إدارة المشاريع</summary><p>تنظيم الوقت والموارد والتكاليف ومراحل التنفيذ.</p></details>
+</div>
+<div class="card">
+<h3>الفيديوهات التعليمية</h3>
+<label>رابط فيديو يوتيوب</label>
+<input id="video" placeholder="ضع رابط الفيديو">
+<button class="btn" onclick="addVideo()">إضافة الفيديو</button>
+<div id="videos"></div>
+</div>
+</section>
+
+<section id="assistant">
+<h2>المساعد الهندسي</h2>
+<div class="card">
+<p>اكتب سؤالك الهندسي للحصول على إرشاد أولي.</p>
+<textarea id="question" rows="4" placeholder="اكتب سؤالك هنا"></textarea>
+<button class="btn" onclick="answer()">تحليل السؤال</button>
+<div id="answerResult" class="result">بانتظار السؤال.</div>
+<p>هذه نسخة أولية تعمل بقواعد إرشادية محلية وليست متصلة حالياً بخدمة ذكاء اصطناعي خارجية.</p>
+</div>
+</section>
 </main>
-<footer><div class="wrap"><strong>AI Engineering Mentor</strong> — إعداد: المهندس علي رعد<br>نسخة تعليمية أولية © 2026 <span class="small"> | لا تمثل بديلاً عن الكودات والمواصفات أو مراجعة المهندس المختص.</span></div></footer>
+
+<footer>
+AI Engineering Mentor © 2026<br>
+إعداد وتطوير علي رعد<br>
+هندسة البناء والإنشاءات
+</footer>
+
 <script>
-const $=id=>document.getElementById(id);
-function show(id){document.querySelectorAll('.section').forEach(s=>s.classList.toggle('active',s.id===id));document.querySelectorAll('.navbtn').forEach(b=>b.classList.toggle('active',b.dataset.target===id));window.scrollTo({top:0,behavior:'smooth'})}
-document.querySelectorAll('[data-target]').forEach(b=>b.addEventListener('click',()=>show(b.dataset.target)));
-document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>show(b.dataset.go)));
-const num=id=>Number($(id).value);
-const fmt=n=>new Intl.NumberFormat('en-US',{maximumFractionDigits:2}).format(n);
-$('calcEstimate').onclick=()=>{let q=num('eQty'),p=num('ePrice'),n=$('eName').value.trim()||'البند';$('eResult').textContent=q>0&&p>=0?`البند: ${n}\nالكمية: ${fmt(q)}\nسعر الوحدة: ${fmt(p)} دينار\nالكلفة التقديرية: ${fmt(q*p)} دينار`:'يرجى إدخال كمية أكبر من صفر وسعر صحيح.'};
-$('calcConcrete').onclick=()=>{let l=num('cL'),w=num('cW'),h=num('cH');$('cResult').textContent=l>0&&w>0&&h>0?`حجم الخرسانة = الطول × العرض × الارتفاع\n= ${fmt(l)} × ${fmt(w)} × ${fmt(h)}\n= ${fmt(l*w*h)} م³`:'أدخل أبعاداً أكبر من صفر.'};
-$('calcSurvey').onclick=()=>{let l=num('sL'),w=num('sW');$('sResult').textContent=l>0&&w>0?`المساحة = ${fmt(l*w)} م²\nالمحيط = ${fmt(2*(l+w))} م`:'أدخل الطول والعرض بقيم أكبر من صفر.'};
+function show(id){
+document.querySelectorAll('main section').forEach(s=>s.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+window.scrollTo(0,0);
+}
+function n(id){return Number(document.getElementById(id).value)||0}
+function calcConcrete(){
+let v=n('l')*n('w')*n('h');
+document.getElementById('r1').textContent='حجم الخرسانة: '+v.toFixed(3)+' م³';
+}
+function calcWall(){
+let v=n('wl')*n('wh')-n('wo');
+document.getElementById('r2').textContent='مساحة الجدار الصافية: '+v.toFixed(2)+' م²';
+}
+function calcExcavation(){
+let v=n('el')*n('ew')*n('eh');
+document.getElementById('r3').textContent='حجم الحفر: '+v.toFixed(3)+' م³';
+}
+function calcBricks(){
+let v=n('ba')*n('bd');
+document.getElementById('r4').textContent='عدد الطابوق التقديري: '+Math.ceil(v);
+}
 let items=[];
-function render(){let body=$('boqBody');body.innerHTML='';if(!items.length)body.innerHTML='<tr><td colspan="6" class="small">لا توجد بنود بعد.</td></tr>';let total=0;items.forEach((x,i)=>{let sum=x.q*x.p;total+=sum;let tr=document.createElement('tr');[x.n,x.u,fmt(x.q),fmt(x.p),fmt(sum)].forEach(v=>{let td=document.createElement('td');td.textContent=v;tr.appendChild(td)});let td=document.createElement('td'),btn=document.createElement('button');btn.textContent='حذف';btn.onclick=()=>{items.splice(i,1);render()};td.appendChild(btn);tr.appendChild(td);body.appendChild(tr)});$('boqTotal').textContent=`الإجمالي الكلي: ${fmt(total)} دينار`}
-$('addItem').onclick=()=>{let n=$('bName').value.trim(),q=num('bQty'),p=num('bPrice');if(!n||q<=0||p<0||$('bQty').value===''||$('bPrice').value===''){alert('أدخل اسم البند والكمية والسعر بصورة صحيحة.');return}items.push({n,u:$('bUnit').value,q,p});$('bName').value='';$('bQty').value='';$('bPrice').value='';render()};
-$('printBoq').onclick=()=>window.print();
-$('askAssistant').onclick=()=>{let t=$('aTopic').value;let tips={concrete:'راجع نسبة الماء إلى الإسمنت، تدرج الركام، قابلية التشغيل، المعالجة وفحوصات الخرسانة حسب المواصفات المعتمدة.',boq:'ابدأ بتقسيم المشروع إلى أبواب، ثم عرّف كل بند ووحدته وطريقة قياسه، واستخرج الكميات من المخططات مع توثيق الافتراضات.',survey:'تحقق من ضبط الجهاز، النقاط المرجعية، وحدة القياس، الإغلاق المساحي وتسجيل القراءات ميدانياً.',site:'تابع المخططات المعتمدة، تسلسل التنفيذ، الجودة، السلامة، الكميات اليومية ومحاضر الاستلام.'};$('aResult').textContent=tips[t]};
+function addItem(){
+let name=document.getElementById('item').value.trim(),q=n('qty'),p=n('price');
+if(!name||q<=0||p<0){alert('أدخل البيانات بشكل صحيح');return}
+items.push({name,q,p});
+let total=0;
+let html='<table width="100%"><tr><th>العمل</th><th>الكمية</th><th>السعر</th><th>المجموع</th></tr>';
+items.forEach(x=>{
+total+=x.q*x.p;
+html+='<tr><td>'+safe(x.name)+'</td><td>'+x.q+'</td><td>'+x.p+'</td><td>'+(x.q*x.p).toFixed(2)+'</td></tr>';
+});
+html+='</table><hr>المجموع الكلي: '+total.toFixed(2);
+document.getElementById('boqresult').innerHTML=html;
+}
+function safe(s){
+return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+function drawPlan(){
+let l=n('pl'),w=n('pw');
+if(l<=0||w<=0){alert('أدخل أبعاداً صحيحة');return}
+document.getElementById('drawing').innerHTML=
+'المساحة: '+(l*w).toFixed(2)+' م²'+
+'<div style="border:3px solid #59d5e8;margin:15px auto;width:min(100%,350px);aspect-ratio:'+l+'/'+w+';display:flex;align-items:center;justify-content:center">مخطط أولي</div>';
+}
+function addRoom(){
+let name=document.getElementById('room').value.trim();
+if(!name)return;
+let div=document.createElement('div');
+div.className='result';
+div.textContent=name;
+let b=document.createElement('button');
+b.className='btn';b.textContent='حذف';
+b.onclick=()=>div.remove();
+div.appendChild(b);
+document.getElementById('rooms').appendChild(div);
+document.getElementById('room').value='';
+}
+function addVideo(){
+let url=document.getElementById('video').value.trim();
+try{
+let u=new URL(url);
+if(u.protocol!=='https:'||!['youtube.com','www.youtube.com','youtu.be','www.youtu.be'].includes(u.hostname)){throw Error()}
+let a=document.createElement('a');
+a.href=u.href;a.target='_blank';a.rel='noopener noreferrer';
+a.textContent='مشاهدة الفيديو التعليمي';
+a.style='display:block;padding:12px;color:#59d5e8';
+document.getElementById('videos').appendChild(a);
+}catch(e){alert('أدخل رابط يوتيوب صحيحاً')}
+}
+function answer(){
+let q=document.getElementById('question').value.trim();
+if(!q){alert('اكتب السؤال');return}
+let a='يرجى تحديد أبعاد المسألة والوحدات والمواصفات الهندسية.';
+if(q.includes('خرسانة'))a='حجم الخرسانة = الطول × العرض × الارتفاع. الناتج بالمتر المكعب.';
+else if(q.includes('مساحة'))a='مساحة المستطيل = الطول × العرض.';
+else if(q.includes('حفر'))a='حجم الحفر = الطول × العرض × العمق.';
+else if(q.includes('طابوق')||q.includes('بلوك'))a='عدد الطابوق التقديري = مساحة الجدار × عدد الوحدات لكل متر مربع.';
+else if(q.includes('حديد'))a='تحديد حديد التسليح يتطلب مراجعة المخططات الإنشائية وأقطار القضبان والمسافات والمواصفات.';
+document.getElementById('answerResult').textContent=a;
+}
 </script>
-</body></html>
+</body>
+</html>
